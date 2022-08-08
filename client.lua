@@ -52,7 +52,6 @@ Citizen.CreateThread(function()
 				if GetDistanceBetweenCoords(coords.x, coords.y, coords.z, bankcoords.x, bankcoords.y, bankcoords.z, true) < 5.0 then
 					DisplayNotification('~r~Press the ~w~E ~r~key to rob the bank')
 					if IsControlJustReleased(0, 38) then -- E key
-						TriggerServerEvent('GiveRewardBank', true)
 						TriggerServerEvent('BadgerBankRobbery:SetActive', true)
 						TriggerServerEvent('PrintBR:PrintMessage', bankcoords.alarm)
 						if (config.displayBlips == true) then
@@ -66,8 +65,8 @@ Citizen.CreateThread(function()
 						end
 						TriggerEvent("mythic_progressbar:client:progress", {
 							name = "RobbingTheBank",
-							duration = (1000 * config.timeToRob), -- 1000ms * x seconds
-							label = config.robbingStr,
+							duration = 1000, -- 1000ms * x seconds
+							label = "Action Label",
 							useWhileDead = false,
 							canCancel = false,
 							controlDisables = {
@@ -79,7 +78,6 @@ Citizen.CreateThread(function()
 							animation = {
 								animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
 								anim = "machinic_loop_mechandplayer",
-								flags = 49,
 							},
 							prop = {
 								model = "prop_ing_crowbar",
@@ -88,6 +86,7 @@ Citizen.CreateThread(function()
 							if not status and not IsEntityDead(GetPlayerPed(-1)) then
 								DisplayNotification('~g~Success: You have robbed the bank successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
+								TriggerServerEvent('GiveRewardBank', true)
 							else
 								DisplayNotification('~r~Failed: Your bank robbery has failed.')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
@@ -106,7 +105,6 @@ Citizen.CreateThread(function()
 				if GetDistanceBetweenCoords(coords.x, coords.y, coords.z, ammunationcoords.x, ammunationcoords.y, ammunationcoords.z) < 5.0 then
 					DisplayNotification('~r~Press the ~w~E ~r~key to rob the Ammunation')
 					if IsControlJustReleased(0, 38) then -- E
-						TriggerServerEvent('GiveRewardAmmo', true)
 						TriggerServerEvent('PrintBR:PrintMessage', ammunationcoords.alarm)
 						TriggerServerEvent('BadgerBankRobbery:SetActive', true)
 						if (config.displayBlips == true) then
@@ -118,10 +116,10 @@ Citizen.CreateThread(function()
 							AddTextComponentString(ammunationcoords.name)
 							EndTextCommandSetBlipName(ammunationcoords.blip)
 						end
-						TriggerEvent("mythic_progressbar:client:progress", {
-							name = "RobbingTheBank",
-							duration = (1000 * config.timeToRob), -- 1000ms * x seconds
-							label = config.robbingStr,
+						TriggerEvent("mythic_progbar:client:progress", {
+							name = "SafeRobbery",
+							duration = 10000,
+							label = "Cracking Safe and Grabbing Money",
 							useWhileDead = false,
 							canCancel = false,
 							controlDisables = {
@@ -142,6 +140,7 @@ Citizen.CreateThread(function()
 							if not status and not IsEntityDead(GetPlayerPed(-1)) then
 								DisplayNotification('~g~Success: You have robbed the Ammunation successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
+								TriggerServerEvent('GiveRewardAmmo', true)
 							else
 								DisplayNotification('~r~Failed: Your Ammunation robbery has failed.')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
@@ -160,7 +159,6 @@ Citizen.CreateThread(function()
 				if GetDistanceBetweenCoords(coords.x, coords.y, coords.z, shopcoords.x, shopcoords.y, shopcoords.z) < 5.0 then
 					DisplayNotification('~r~Press the ~w~E ~r~key to rob the 24/7')
 					if IsControlJustReleased(0, 38) then -- E
-						TriggerServerEvent('GiveReward247', true)
 						TriggerServerEvent('PrintBR:PrintMessage', shopcoords.alarm)
 						TriggerServerEvent('BadgerBankRobbery:SetActive', true)
 						if (config.displayBlips == true) then
@@ -172,10 +170,10 @@ Citizen.CreateThread(function()
 							AddTextComponentString(shopcoords.name)
 							EndTextCommandSetBlipName(shopcoords.blip)
 						end
-						TriggerEvent("mythic_progressbar:client:progress", {
-							name = "RobbingTheBank",
-							duration = (1000 * config.timeToRob), -- 1000ms * x seconds
-							label = config.robbingStr,
+						TriggerEvent("mythic_progbar:client:progress", {
+							name = "SafeRobbery",
+							duration = 10000,
+							label = "Cracking Safe and Grabbing Money",
 							useWhileDead = false,
 							canCancel = false,
 							controlDisables = {
@@ -196,6 +194,7 @@ Citizen.CreateThread(function()
 							if not status and not IsEntityDead(GetPlayerPed(-1)) then
 								DisplayNotification('~g~Success: You have robbed the 24/7 successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
+								TriggerServerEvent('GiveReward247', true)
 							else
 								DisplayNotification('~r~Failed: Your 24/7 robbery has failed.')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
@@ -214,7 +213,6 @@ Citizen.CreateThread(function()
 				if GetDistanceBetweenCoords(coords.x, coords.y, coords.z, ltdcoords.x, ltdcoords.y, ltdcoords.z) < 5.0 then
 					DisplayNotification('~r~Press the ~w~E ~r~key to rob the LTD Gas Station')
 					if IsControlJustReleased(0, 38) then -- E
-						TriggerServerEvent('GiveRewardLTD', true)
 						TriggerServerEvent('PrintBR:PrintMessage', ltdcoords.alarm)
 						TriggerServerEvent('BadgerBankRobbery:SetActive', true)
 						if (config.displayBlips == true) then
@@ -226,10 +224,10 @@ Citizen.CreateThread(function()
 							AddTextComponentString(ltdcoords.name)
 							EndTextCommandSetBlipName(ltdcoords.blip)
 						end
-						TriggerEvent("mythic_progressbar:client:progress", {
-							name = "RobbingTheBank",
-							duration = (1000 * config.timeToRob), -- 1000ms * x seconds
-							label = config.robbingStr,
+						TriggerEvent("mythic_progbar:client:progress", {
+							name = "SafeRobbery",
+							duration = 10000,
+							label = "Cracking Safe and Grabbing Money",
 							useWhileDead = false,
 							canCancel = false,
 							controlDisables = {
@@ -250,6 +248,7 @@ Citizen.CreateThread(function()
 							if not status and not IsEntityDead(GetPlayerPed(-1)) then
 								DisplayNotification('~g~Success: You have robbed the LTD Gas Station successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
+								TriggerServerEvent('GiveRewardLTD', true)
 							else
 								DisplayNotification('~r~Failed: Your LTD Gas Station robbery has failed.')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
@@ -268,7 +267,6 @@ Citizen.CreateThread(function()
 				if GetDistanceBetweenCoords(coords.x, coords.y, coords.z, liquorcoords.x, liquorcoords.y, liquorcoords.z) < 5.0 then
 					DisplayNotification('~r~Press the ~w~E ~r~key to rob the Liquor Store')
 					if IsControlJustReleased(0, 38) then -- E
-						TriggerServerEvent('GiveRewardLiq', true)
 						TriggerServerEvent('PrintBR:PrintMessage', liquorcoords.alarm)
 						TriggerServerEvent('BadgerBankRobbery:SetActive', true)
 						liquorcoords.blip = AddBlipForCoord(liquorcoords.x, liquorcoords.y, liquorcoords.z)
@@ -278,10 +276,10 @@ Citizen.CreateThread(function()
 						BeginTextCommandSetBlipName("STRING")
 						AddTextComponentString(liquorcoords.name)
 						EndTextCommandSetBlipName(liquorcoords.blip)
-						TriggerEvent("mythic_progressbar:client:progress", {
-							name = "RobbingTheBank",
-							duration = (1000 * config.timeToRob), -- 1000ms * x seconds
-							label = config.robbingStr,
+						TriggerEvent("mythic_progbar:client:progress", {
+							name = "SafeRobbery",
+							duration = 10000,
+							label = "Cracking Safe and Grabbing Money",
 							useWhileDead = false,
 							canCancel = false,
 							controlDisables = {
@@ -300,10 +298,11 @@ Citizen.CreateThread(function()
 							}
 						}, function(status)
 							if not status and not IsEntityDead(GetPlayerPed(-1)) then
-								DisplayNotification('~g~Success: You have robbed the Liquor Store successfully!')
+								DisplayNotification('~g~Success: You have robbed the Liqour Store successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
+								TriggerServerEvent('GiveRewardLiq', true)
 							else
-								DisplayNotification('~r~Failed: Your Liquor Store robbery has failed.')
+								DisplayNotification('~r~Failed: Your Liqour store robbery has failed.')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
 							end
 						end)
