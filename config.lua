@@ -36,7 +36,7 @@ config = {
 		x = -334.27, y = 6082.13, z = 31.45 - 1},
 
 		{name = "Sandy Ammunation Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5Ammunation in Sandy Shores^1! All police units are required to assist!", 
-		x = 1689.63, y = 3757.84, z = 34.71 - 1},
+		x = 1693.09, y = 3755.05, z = 34.70 - 1},
 
 		{name = "Route 68 Ammunation Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5Ammunation on Route 68^1! All police units are required to assist!", 
 		x = -1121.77, y = 2697.31, z = 18.55 - 1},
