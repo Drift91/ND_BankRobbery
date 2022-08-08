@@ -8,3 +8,8 @@ end)``
 
 
 Props to Badger/Jared for creating the main script!
+
+
+#required
+mythic_progbar
+mythic_notify
