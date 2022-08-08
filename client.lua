@@ -65,7 +65,7 @@ Citizen.CreateThread(function()
 						end
 						TriggerEvent("mythic_progressbar:client:progress", {
 							name = "RobbingTheBank",
-							duration = 1000, -- 1000ms * x seconds
+							duration = 220000, -- 1000ms * x seconds
 							label = "Action Label",
 							useWhileDead = false,
 							canCancel = false,
@@ -118,7 +118,7 @@ Citizen.CreateThread(function()
 						end
 						TriggerEvent("mythic_progbar:client:progress", {
 							name = "SafeRobbery",
-							duration = 10000,
+							duration = 40000,
 							label = "Cracking Safe and Grabbing Money",
 							useWhileDead = false,
 							canCancel = false,
@@ -172,7 +172,7 @@ Citizen.CreateThread(function()
 						end
 						TriggerEvent("mythic_progbar:client:progress", {
 							name = "SafeRobbery",
-							duration = 10000,
+							duration = 100000,
 							label = "Cracking Safe and Grabbing Money",
 							useWhileDead = false,
 							canCancel = false,
@@ -226,7 +226,7 @@ Citizen.CreateThread(function()
 						end
 						TriggerEvent("mythic_progbar:client:progress", {
 							name = "SafeRobbery",
-							duration = 10000,
+							duration = 40000,
 							label = "Cracking Safe and Grabbing Money",
 							useWhileDead = false,
 							canCancel = false,
@@ -278,7 +278,7 @@ Citizen.CreateThread(function()
 						EndTextCommandSetBlipName(liquorcoords.blip)
 						TriggerEvent("mythic_progbar:client:progress", {
 							name = "SafeRobbery",
-							duration = 10000,
+							duration = 40000,
 							label = "Cracking Safe and Grabbing Money",
 							useWhileDead = false,
 							canCancel = false,
