@@ -63,12 +63,12 @@ Citizen.CreateThread(function()
 							AddTextComponentString(bankcoords.name)
 							EndTextCommandSetBlipName(bankcoords.blip)
 						end
-						TriggerEvent("mythic_progressbar:client:progress", {
-							name = "RobbingTheBank",
-							duration = 220000, -- 1000ms * x seconds
-							label = "Action Label",
+						TriggerEvent("mythic_progbar:client:progress", {
+							name = "SafeRobbery",
+							duration = 200000,
+							label = "Cracking Safe and Grabbing Money",
 							useWhileDead = false,
-							canCancel = false,
+							canCancel = true,
 							controlDisables = {
 								disableMovement = true,
 								disableCarMovement = true,
@@ -78,19 +78,20 @@ Citizen.CreateThread(function()
 							animation = {
 								animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
 								anim = "machinic_loop_mechandplayer",
+								flags = 49,
 							},
 							prop = {
 								model = "prop_ing_crowbar",
 							}
 						}, function(status)
 							if not status and not IsEntityDead(GetPlayerPed(-1)) then
-								DisplayNotification('~g~Success: You have robbed the bank successfully!')
+								DisplayNotification('~g~Success: You have robbed the Ammunation successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
-								TriggerServerEvent('GiveRewardBank', true)
+								TriggerServerEvent('GiveRewardAmmo', true)
 							else
-								DisplayNotification('~r~Failed: Your bank robbery has failed.')
+								DisplayNotification('~r~Failed: Your Ammunation robbery has failed.')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
-							end
+							end	
 						end)
 						Wait(1000 * config.timeToRob)
 						RemoveBlip(bankcoords.blip)
