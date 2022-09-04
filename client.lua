@@ -1,12 +1,12 @@
 -------------------------
---- BadgerBankRobbery ---
+--- NDBankRobbery ---
 -------------------------
 
 NDCore = exports["ND_Core"]:GetCoreObject()
 
 robberyActive = false
-RegisterNetEvent('BadgerBankRobbery:IsActive:Return')
-AddEventHandler('BadgerBankRobbery:IsActive:Return', function(bool)
+RegisterNetEvent('NDBankRobbery:IsActive:Return')
+AddEventHandler('NDBankRobbery:IsActive:Return', function(bool)
 	robberyActive = bool
 end)
 
@@ -52,7 +52,7 @@ Citizen.CreateThread(function()
 				if GetDistanceBetweenCoords(coords.x, coords.y, coords.z, bankcoords.x, bankcoords.y, bankcoords.z, true) < 5.0 then
 					DisplayNotification('~r~Press the ~w~E ~r~key to rob the bank')
 					if IsControlJustReleased(0, 38) then -- E key
-						TriggerServerEvent('BadgerBankRobbery:SetActive', true)
+						TriggerServerEvent('NDBankRobbery:SetActive', true)
 						TriggerServerEvent('PrintBR:PrintMessage', bankcoords.alarm)
 						if (config.displayBlips == true) then
 							bankcoords.blip = AddBlipForCoord(bankcoords.x, bankcoords.y, bankcoords.z)
@@ -107,7 +107,7 @@ Citizen.CreateThread(function()
 					DisplayNotification('~r~Press the ~w~E ~r~key to rob the Ammunation')
 					if IsControlJustReleased(0, 38) then -- E
 						TriggerServerEvent('PrintBR:PrintMessage', ammunationcoords.alarm)
-						TriggerServerEvent('BadgerBankRobbery:SetActive', true)
+						TriggerServerEvent('NDBankRobbery:SetActive', true)
 						if (config.displayBlips == true) then
 							ammunationcoords.blip = AddBlipForCoord(ammunationcoords.x, ammunationcoords.y, ammunationcoords.z)
 							SetBlipSprite(ammunationcoords.blip, 353)
@@ -161,7 +161,7 @@ Citizen.CreateThread(function()
 					DisplayNotification('~r~Press the ~w~E ~r~key to rob the 24/7')
 					if IsControlJustReleased(0, 38) then -- E
 						TriggerServerEvent('PrintBR:PrintMessage', shopcoords.alarm)
-						TriggerServerEvent('BadgerBankRobbery:SetActive', true)
+						TriggerServerEvent('NDBankRobbery:SetActive', true)
 						if (config.displayBlips == true) then
 							shopcoords.blip = AddBlipForCoord(shopcoords.x, shopcoords.y, shopcoords.z)
 							SetBlipSprite(shopcoords.blip, 353)
@@ -215,7 +215,7 @@ Citizen.CreateThread(function()
 					DisplayNotification('~r~Press the ~w~E ~r~key to rob the LTD Gas Station')
 					if IsControlJustReleased(0, 38) then -- E
 						TriggerServerEvent('PrintBR:PrintMessage', ltdcoords.alarm)
-						TriggerServerEvent('BadgerBankRobbery:SetActive', true)
+						TriggerServerEvent('NDBankRobbery:SetActive', true)
 						if (config.displayBlips == true) then
 							ltdcoords.blip = AddBlipForCoord(ltdcoords.x, ltdcoords.y, ltdcoords.z)
 							SetBlipSprite(ltdcoords.blip, 353)
@@ -269,7 +269,7 @@ Citizen.CreateThread(function()
 					DisplayNotification('~r~Press the ~w~E ~r~key to rob the Liquor Store')
 					if IsControlJustReleased(0, 38) then -- E
 						TriggerServerEvent('PrintBR:PrintMessage', liquorcoords.alarm)
-						TriggerServerEvent('BadgerBankRobbery:SetActive', true)
+						TriggerServerEvent('NDBankRobbery:SetActive', true)
 						liquorcoords.blip = AddBlipForCoord(liquorcoords.x, liquorcoords.y, liquorcoords.z)
 						SetBlipSprite(liquorcoords.blip, 353)
 						SetBlipFlashTimer(liquorcoords.blip, 1000 * config.timeToRob)
@@ -327,6 +327,6 @@ end
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1000)
-		TriggerServerEvent('BadgerBankRobbery:IsActive')
+		TriggerServerEvent('NDBankRobbery:IsActive')
 	end
 end)
