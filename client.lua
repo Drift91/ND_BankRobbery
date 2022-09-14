@@ -85,11 +85,11 @@ Citizen.CreateThread(function()
 							}
 						}, function(status)
 							if not status and not IsEntityDead(GetPlayerPed(-1)) then
-								DisplayNotification('~g~Success: You have robbed the Ammunation successfully!')
+								DisplayNotification('~g~Success: You have robbed a Bank successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
 								TriggerServerEvent('GiveRewardAmmo', true)
 							else
-								DisplayNotification('~r~Failed: Your Ammunation robbery has failed.')
+								DisplayNotification('~r~Failed: Your Bank robbery has failed.')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
 							end	
 						end)
