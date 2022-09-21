@@ -2,27 +2,33 @@
 --- NDBankRobbery ---
 -------------------------
 NDCore = exports["ND_Core"]:GetCoreObject()
-RegisterServerEvent("GiveRewardBank", function()
+
+RegisterNetEvent("GiveRewardBank")
+AddEventHandler("GiveRewardBank", function(player)
 	local player = source
 	NDCore.Functions.AddMoney(20000, player, "cash")
 end)
 
-RegisterServerEvent("GiveRewardAmmo", function()
+RegisterNetEvent("GiveRewardAmmo")
+AddEventHandler("GiveRewardAmmo", function(player)
 	local player = source
 	NDCore.Functions.AddMoney(500, player, "cash")
 end)
 
-RegisterServerEvent("GiveRewardLTD", function()
+RegisterNetEvent("GiveRewardLTD")
+AddEventHandler("GiveRewardLTD", function(player)
 	local player = source
 	NDCore.Functions.AddMoney(5000, player, "cash")
 end)
 
-RegisterServerEvent("GiveReward247", function()
+RegisterNetEvent("GiveReward247")
+AddEventHandler("GiveReward247", function(player)
 	local player = source
 	NDCore.Functions.AddMoney(5000, player, "cash")
 end)
 
-RegisterServerEvent("GiveRewardLiq", function()
+RegisterNetEvent("GiveRewardLiq")
+AddEventHandler("GiveRewardLiq", function(player)
 	local player = source
 	NDCore.Functions.AddMoney(5000, player, "cash")
 end)
@@ -54,7 +60,7 @@ end)
 RegisterNetEvent('Print:PrintDebug')
 AddEventHandler('Print:PrintDebug', function(msg)
 	print(msg)
-	TriggerClientEvent('chatMessage', -1, "^7[^ND's Scripts^7] ^1DEBUG ^7" .. msg)
+	TriggerClientEvent('chatMessage', -1, "^7[^1Badger's Scripts^7] ^1DEBUG ^7" .. msg)
 end)
 RegisterNetEvent('PrintBR:PrintMessage')
 AddEventHandler('PrintBR:PrintMessage', function(msg)
