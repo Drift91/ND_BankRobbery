@@ -326,6 +326,7 @@ Citizen.CreateThread(function()
 					if IsControlJustReleased(0, 38) then -- E
 						TriggerServerEvent('PrintBR:PrintMessage', liquorcoords.alarm)
 						TriggerServerEvent('NDBankRobbery:SetActive', true)
+					if (config.displayBlips == true) then	
 						liquorcoords.blip = AddBlipForCoord(liquorcoords.x, liquorcoords.y, liquorcoords.z)
 						SetBlipSprite(liquorcoords.blip, 353)
 						SetBlipFlashTimer(liquorcoords.blip, 1000 * config.timeToRob)
