@@ -63,6 +63,13 @@ Citizen.CreateThread(function()
 							AddTextComponentString(bankcoords.name)
 							EndTextCommandSetBlipName(bankcoords.blip)
 						end
+						exports["ModernHUD"]:AndyyyNotify({
+							title = '<font color="#eb3434">Prio Started:</font>',
+							message = "Bank Robbery in-Progress", -- add the message
+							icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+							colorHex = "#eb3434", -- You can just search up color picker on google to find a color.
+							timeout = 8000 -- this will take 8 seconds until the notification disappears
+						})
 						TriggerEvent("mythic_progbar:client:progress", {
 							name = "SafeRobbery",
 							duration = 200000,
@@ -85,9 +92,16 @@ Citizen.CreateThread(function()
 							}
 						}, function(status)
 							if not status and not IsEntityDead(GetPlayerPed(-1)) then
-								DisplayNotification('~g~Success: You have robbed a Bank successfully!')
+								exports["ModernHUD"]:AndyyyNotify({
+									title = '<font color="#34eb52">Prio Active:</font>',
+									message = "Bank Robbery Successful", -- add the message
+									icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+									colorHex = "#34eb52", -- You can just search up color picker on google to find a color.
+									timeout = 8000 -- this will take 8 seconds until the notification disappears
+								})
+								--DisplayNotification('~g~Success: You have robbed the Bank successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
-								TriggerServerEvent('GiveRewardAmmo', true)
+								TriggerServerEvent('GiveRewardBank', true)
 							else
 								DisplayNotification('~r~Failed: Your Bank robbery has failed.')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
@@ -117,6 +131,13 @@ Citizen.CreateThread(function()
 							AddTextComponentString(ammunationcoords.name)
 							EndTextCommandSetBlipName(ammunationcoords.blip)
 						end
+						exports["ModernHUD"]:AndyyyNotify({
+							title = '<font color="#eb3434">Prio Started:</font>',
+							message = "Ammunation Robbery in-Progress", -- add the message
+							icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+							colorHex = "#eb3434", -- You can just search up color picker on google to find a color.
+							timeout = 8000 -- this will take 8 seconds until the notification disappears
+						})
 						TriggerEvent("mythic_progbar:client:progress", {
 							name = "SafeRobbery",
 							duration = 40000,
@@ -139,7 +160,14 @@ Citizen.CreateThread(function()
 							}
 						}, function(status)
 							if not status and not IsEntityDead(GetPlayerPed(-1)) then
-								DisplayNotification('~g~Success: You have robbed the Ammunation successfully!')
+								exports["ModernHUD"]:AndyyyNotify({
+									title = '<font color="#34eb52">Prio Active:</font>',
+									message = "Ammunation Robbery Successful", -- add the message
+									icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+									colorHex = "#34eb52", -- You can just search up color picker on google to find a color.
+									timeout = 8000 -- this will take 8 seconds until the notification disappears
+								})
+								--DisplayNotification('~g~Success: You have robbed the Ammunation successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
 								TriggerServerEvent('GiveRewardAmmo', true)
 							else
@@ -171,9 +199,16 @@ Citizen.CreateThread(function()
 							AddTextComponentString(shopcoords.name)
 							EndTextCommandSetBlipName(shopcoords.blip)
 						end
+						exports["ModernHUD"]:AndyyyNotify({
+							title = '<font color="#eb3434">Prio Started:</font>',
+							message = "24/7 Robbery in-Progress", -- add the message
+							icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+							colorHex = "#eb3434", -- You can just search up color picker on google to find a color.
+							timeout = 8000 -- this will take 8 seconds until the notification disappears
+						})
 						TriggerEvent("mythic_progbar:client:progress", {
 							name = "SafeRobbery",
-							duration = 100000,
+							duration = 100,
 							label = "Cracking Safe and Grabbing Money",
 							useWhileDead = false,
 							canCancel = false,
@@ -193,7 +228,14 @@ Citizen.CreateThread(function()
 							}
 						}, function(status)
 							if not status and not IsEntityDead(GetPlayerPed(-1)) then
-								DisplayNotification('~g~Success: You have robbed the 24/7 successfully!')
+								exports["ModernHUD"]:AndyyyNotify({
+									title = '<font color="#34eb52">Prio Active:</font>',
+									message = "24/7 Robbery Successful", -- add the message
+									icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+									colorHex = "#34eb52", -- You can just search up color picker on google to find a color.
+									timeout = 8000 -- this will take 8 seconds until the notification disappears
+								})
+								--DisplayNotification('~g~Success: You have robbed the 24/7 successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
 								TriggerServerEvent('GiveReward247', true)
 							else
@@ -225,6 +267,13 @@ Citizen.CreateThread(function()
 							AddTextComponentString(ltdcoords.name)
 							EndTextCommandSetBlipName(ltdcoords.blip)
 						end
+						exports["ModernHUD"]:AndyyyNotify({
+							title = '<font color="#eb3434">Prio Started:</font>',
+							message = "LTD Robbery in-Progress", -- add the message
+							icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+							colorHex = "#eb3434", -- You can just search up color picker on google to find a color.
+							timeout = 8000 -- this will take 8 seconds until the notification disappears
+						})
 						TriggerEvent("mythic_progbar:client:progress", {
 							name = "SafeRobbery",
 							duration = 40000,
@@ -247,7 +296,14 @@ Citizen.CreateThread(function()
 							}
 						}, function(status)
 							if not status and not IsEntityDead(GetPlayerPed(-1)) then
-								DisplayNotification('~g~Success: You have robbed the LTD Gas Station successfully!')
+								exports["ModernHUD"]:AndyyyNotify({
+									title = '<font color="#34eb52">Prio Active:</font>',
+									message = "LTD Robbery Successful", -- add the message
+									icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+									colorHex = "#34eb52", -- You can just search up color picker on google to find a color.
+									timeout = 8000 -- this will take 8 seconds until the notification disappears
+								})
+								--DisplayNotification('~g~Success: You have robbed the LTD Gas Station successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
 								TriggerServerEvent('GiveRewardLTD', true)
 							else
@@ -277,36 +333,51 @@ Citizen.CreateThread(function()
 						BeginTextCommandSetBlipName("STRING")
 						AddTextComponentString(liquorcoords.name)
 						EndTextCommandSetBlipName(liquorcoords.blip)
-						TriggerEvent("mythic_progbar:client:progress", {
-							name = "SafeRobbery",
-							duration = 40000,
-							label = "Cracking Safe and Grabbing Money",
-							useWhileDead = false,
-							canCancel = false,
-							controlDisables = {
-								disableMovement = true,
-								disableCarMovement = true,
-								disableMouse = false,
-								disableCombat = true,
-							},
-							animation = {
-								animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
-								anim = "machinic_loop_mechandplayer",
-								flags = 49,
-							},
-							prop = {
-								model = "prop_ing_crowbar",
-							}
-						}, function(status)
-							if not status and not IsEntityDead(GetPlayerPed(-1)) then
-								DisplayNotification('~g~Success: You have robbed the Liqour Store successfully!')
-								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
-								TriggerServerEvent('GiveRewardLiq', true)
-							else
-								DisplayNotification('~r~Failed: Your Liqour store robbery has failed.')
-								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
-							end
-						end)
+					end
+					exports["ModernHUD"]:AndyyyNotify({
+						title = '<font color="#eb3434">Prio Started:</font>',
+						message = "Liqour Robbery in-Progress", -- add the message
+						icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+						colorHex = "#eb3434", -- You can just search up color picker on google to find a color.
+						timeout = 8000 -- this will take 8 seconds until the notification disappears
+					})	
+					TriggerEvent("mythic_progbar:client:progress", {
+						name = "SafeRobbery",
+						duration = 40000,
+						label = "Cracking Safe and Grabbing Money",
+						useWhileDead = false,
+						canCancel = false,
+						controlDisables = {
+							disableMovement = true,
+							disableCarMovement = true,
+							disableMouse = false,
+							disableCombat = true,
+						},
+						animation = {
+							animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
+							anim = "machinic_loop_mechandplayer",
+							flags = 49,
+						},
+						prop = {
+							model = "prop_ing_crowbar",
+						}
+					}, function(status)
+						if not status and not IsEntityDead(GetPlayerPed(-1)) then
+							exports["ModernHUD"]:AndyyyNotify({
+								title = '<font color="#34eb52">Prio Active:</font>',
+								message = "Liqour Robbery Successful", -- add the message
+								icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+								colorHex = "#34eb52", -- You can just search up color picker on google to find a color.
+								timeout = 8000 -- this will take 8 seconds until the notification disappears
+							})
+						--	DisplayNotification('~g~Success: You have robbed the Liqour Store successfully!')
+							TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
+							TriggerServerEvent('GiveRewardLiq', true)
+						else
+							DisplayNotification('~r~Failed: Your Liqour store robbery has failed.')
+							TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
+						end
+					end)
 						Wait(1000 * config.timeToRob)
 						RemoveBlip(liquorcoords.blip)
 					end

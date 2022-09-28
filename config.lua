@@ -36,7 +36,7 @@ config = {
 		x = -334.27, y = 6082.13, z = 31.45 - 1},
 
 		{name = "Sandy Ammunation Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5Ammunation in Sandy Shores^1! All police units are required to assist!", 
-		x = 1693.09, y = 3755.05, z = 34.70 - 1},
+		x = 1698.36, y = 3758.42, z = 34.70 - 1},
 
 		{name = "Route 68 Ammunation Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5Ammunation on Route 68^1! All police units are required to assist!", 
 		x = -1121.77, y = 2697.31, z = 18.55 - 1},
@@ -110,6 +110,9 @@ config = {
 
 		{name = "Mirror Park LTD Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5LTD in Mirror Park^1! All police units are required to assist!", 
 		x = 1160.38, y = -313.88, z = 69.21 - 1},
+
+		{name = "Joshua RD LTD Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5LTD on Joshua RD near Senora FWY^1! All police units are required to assist!", 
+		x = 2704.94, y = 4317.05, z = 45.87 - 1},
 	},
 
 	liquorcoords = {
@@ -118,6 +121,9 @@ config = {
 
 		{name = "Harmony Liquor Store Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5Liquor Store in Harmony^1! All police units are required to assist!", 
 		x = 1168.83, y = 2718.03, z = 37.16 - 1},
+
+		{name = "Joshua Liquor Store Robbery", alarm = "^1^*A silent alarm has been triggered at the ^5Liquor Store in Delaware^1! All police units are required to assist!", 
+		x = 2442.01, y = 4065.56, z = 38.06 - 1},
 	}
 
 	
