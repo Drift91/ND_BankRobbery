@@ -95,7 +95,7 @@ Citizen.CreateThread(function()
 								exports["ModernHUD"]:AndyyyNotify({
 									title = '<font color="#34eb52">Prio Active:</font>',
 									message = "Bank Robbery Successful", -- add the message
-									icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+									icon = "fas fa-money-bill-wave", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
 									colorHex = "#34eb52", -- You can just search up color picker on google to find a color.
 									timeout = 8000 -- this will take 8 seconds until the notification disappears
 								})
@@ -163,7 +163,7 @@ Citizen.CreateThread(function()
 								exports["ModernHUD"]:AndyyyNotify({
 									title = '<font color="#34eb52">Prio Active:</font>',
 									message = "Ammunation Robbery Successful", -- add the message
-									icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+									icon = "fas fa-money-bill-wave", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
 									colorHex = "#34eb52", -- You can just search up color picker on google to find a color.
 									timeout = 8000 -- this will take 8 seconds until the notification disappears
 								})
@@ -208,7 +208,7 @@ Citizen.CreateThread(function()
 						})
 						TriggerEvent("mythic_progbar:client:progress", {
 							name = "SafeRobbery",
-							duration = 100,
+							duration = 10000,
 							label = "Cracking Safe and Grabbing Money",
 							useWhileDead = false,
 							canCancel = false,
@@ -231,7 +231,7 @@ Citizen.CreateThread(function()
 								exports["ModernHUD"]:AndyyyNotify({
 									title = '<font color="#34eb52">Prio Active:</font>',
 									message = "24/7 Robbery Successful", -- add the message
-									icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+									icon = "fas fa-money-bill-wave", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
 									colorHex = "#34eb52", -- You can just search up color picker on google to find a color.
 									timeout = 8000 -- this will take 8 seconds until the notification disappears
 								})
@@ -299,7 +299,7 @@ Citizen.CreateThread(function()
 								exports["ModernHUD"]:AndyyyNotify({
 									title = '<font color="#34eb52">Prio Active:</font>',
 									message = "LTD Robbery Successful", -- add the message
-									icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
+									icon = "fas fa-money-bill-wave", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
 									colorHex = "#34eb52", -- You can just search up color picker on google to find a color.
 									timeout = 8000 -- this will take 8 seconds until the notification disappears
 								})
@@ -366,7 +366,7 @@ Citizen.CreateThread(function()
 						if not status and not IsEntityDead(GetPlayerPed(-1)) then
 							exports["ModernHUD"]:AndyyyNotify({
 								title = '<font color="#34eb52">Prio Active:</font>',
-								message = "Liqour Robbery Successful", -- add the message
+								message = "Liqour Robbery fa-money-bill-wave", -- add the message
 								icon = "fas fa-bullhorn", -- add the icon (icons can be found here: https://fontawesome.com/v5/search)
 								colorHex = "#34eb52", -- You can just search up color picker on google to find a color.
 								timeout = 8000 -- this will take 8 seconds until the notification disappears
